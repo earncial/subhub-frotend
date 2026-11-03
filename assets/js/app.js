@@ -68,6 +68,7 @@ const TX_META = {
   earncial_transfer:{ icon: 'plus-circle',   bg: 'ico-grn' },
   referral_bonus:   { icon: 'plus-circle',    bg: 'ico-grn' },
   refund:        { icon: 'rotate-left',    bg: 'ico-pur' },
+  Admin_Bonus: { icon: 'gift', bg: 'ico-grn' },
 };
 
 /* ============================================================
@@ -1527,7 +1528,7 @@ function renderTxns() {
   list.innerHTML = state.txns.slice(0, 6).map(tx => {
     const m    = TX_META[tx.type] || { icon: 'circle', bg: 'ico-sky' };
     const desc = tx.dataPlan || tx.cablePlan || tx.discoName || tx.examType || tx.type;
-    const isCr = tx.type === 'wallet_fund' || tx.type === 'refund' || tx.type === 'earncial_transfer' || tx.type === 'referral_bonus';
+    const isCr = tx.type === 'wallet_fund' || tx.type === 'refund' || tx.type === 'earncial_transfer' || tx.type === 'referral_bonus' || tx.type === 'Admin_Bonus';
     return `
     <div class="tx" data-txid="${tx.requestId}">
       <div class="tx-ico ${m.bg}"><i class="fas fa-${m.icon}"></i></div>
